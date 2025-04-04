@@ -1,5 +1,4 @@
 import 'package:facts_project_g1/cubit/fact_cubit.dart';
-// import 'package:facts_project_g1/cubit/fav_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../cubit/FavCubit.dart';
@@ -77,7 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),
-                            maxLines: 3,
                             textAlign: TextAlign.center,
                           ),
                         );
@@ -141,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {
                     FactCubit.get(context).getRandomFact();
                     setState(() {
-                      isFav=!isFav;
+                      isFav= false;
                     });
                   },
                 ),

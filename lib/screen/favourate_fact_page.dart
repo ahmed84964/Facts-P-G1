@@ -15,24 +15,27 @@ class FavScreen extends StatelessWidget {
           return ListView.builder(
             itemCount: favFacts.length,
             itemBuilder: (context, index) {
-              return Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
-                padding: EdgeInsets.only(left: 15, top: 24, bottom: 24),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.blueGrey,
-                ),
-                child: ListTile(
-                  title: Text(favFacts[index],style: TextStyle(
-                    color: Colors.white
-                  ),),
-                  trailing: IconButton(
-                    icon: Icon(Icons.delete,color: Colors.red,),
-                    onPressed: () {
-                      // Remove from favorites
-                      BlocProvider.of<FavCubit>(context)
-                          .removeFactFromFavorites(favFacts[index]);
-                    },
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  padding: EdgeInsets.only(left: 15, top: 24, bottom: 24),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.blueGrey,
+                  ),
+                  child: ListTile(
+                    title: Text(favFacts[index],style: TextStyle(
+                      color: Colors.white
+                    ),),
+                    trailing: IconButton(
+                      icon: Icon(Icons.delete,color: Colors.red,),
+                      onPressed: () {
+                        // Remove from favorites
+                        BlocProvider.of<FavCubit>(context)
+                            .removeFactFromFavorites(favFacts[index]);
+                      },
+                    ),
                   ),
                 ),
               );

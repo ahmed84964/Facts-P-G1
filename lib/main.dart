@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:facts_project_g1/Remote/dio_helper.dart';
 import 'package:facts_project_g1/cubit/fact_cubit.dart';
 import 'package:facts_project_g1/screen/home_page.dart';
@@ -24,6 +23,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => FavCubit()),
       ],
       child: MaterialApp(
+        theme: ThemeData(brightness: Brightness.dark),
         debugShowCheckedModeBanner: false,
         home: const HomeScreen(),
       ),
